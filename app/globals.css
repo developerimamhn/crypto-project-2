@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #FFF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #FFF;
     --foreground: #ededed;
   }
 }
@@ -18,4 +18,89 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Plain";
+  src: url(./Plain-Light.otf);
+  font-weight: 300; /* Light */
+}
+
+@font-face {
+  font-family: "Plain";
+  src: url(./Plain-Thin.otf);
+  font-weight: 200; /* Thin */
+}
+
+@font-face {
+  font-family: "Plain";
+  src: url(./Plain-Ultralight.otf);
+  font-weight: 100; /* Ultralight */
+}
+
+@font-face {
+  font-family: "Plain";
+  src: url(./Plain-Ultrathin.otf);
+  font-weight: 50; /* Ultrathin */
+}
+
+
+.Link-manu-bar{
+  color: #FFF;
+  font-family: "Plain";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 130%; /* 23.4px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.heeroarea{
+  background:  #000;
+}
+
+.thereother{
+  color: #FFF;
+  font-family: Plain;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 110%; /* 167.2px */
+}
+
+.Dilutive{
+  color: #FFF;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "Plain";
+  font-style: normal;
+  font-weight: 250;
+  line-height: 150%; /* 60px */
+}
+
+.learnmorebutton{
+  background: #FFF;
+  color: #000;
+  font-family: "Plain";
+  font-style: normal;
+  font-weight: 250;
+  line-height: 130%; /* 31.2px */
+}
+
+.venturedebt{
+  color: #0F0F11;
+  font-family: "Plain";
+  font-style: normal;
+  font-weight: 200;
+  line-height: 110%; /* 92.4px */
+}
+
+.paragaphabout{
+  color: #919191;
+  font-family: Plain;
+  font-style: normal;
+  font-weight: 250;
+  line-height: 150%; /* 36px */
 }

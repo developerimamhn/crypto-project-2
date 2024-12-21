@@ -1,8 +1,21 @@
+"use client";
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import React from 'react';
 
 const Page1 = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Trigger animation only once
+        threshold: 0.2, // Trigger when 20% of the component is visible
+      });
     return (
-        <div>
+        <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
             <div className='container mx-auto py-[60px] md:py-[80px] lg:py-[120px] xl:py-[150px] 2xl:py-[200px] sm:px-0 px-[24px]'>
                 <h1 className='venturedebt text-[31px] sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[74px] 2xl:text-[84px] mb-[80px] sm:mb-[110px] md:mb-[140px] lg:md-[170px] xl:mb-[200px] 2xl:mb-[232px]'>Venture debt financing for late and growth-stage companies</h1>
                 <div className='flex justify-start items-start flex-col sm:flex-row gap-[20px] sm:gap-0'>
@@ -25,7 +38,7 @@ const Page1 = () => {
                 </div>
                 
             </div>
-        </div>
+        </motion.div>
     );
 };
 

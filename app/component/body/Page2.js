@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import React from 'react';
 import image2 from '../image/image2.png';
 import image3 from '../image/image3.png';
@@ -5,11 +10,27 @@ import image4 from '../image/image4.png';
 import Image from 'next/image';
 
 const Page2 = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Trigger animation only once
+        threshold: 0.2, // Trigger when 20% of the component is visible
+      });
     return (
+        <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
         <div className="bg-[#F6F6F5] ">
             <div className='container mx-auto py-[60px] md:py-[80px] lg:py-[120px] xl:py-[150px] 2xl:py-[200px] sm:px-0 px-[24px] '>
             <a className='paragaphabout text-[18px] md:text-[20px] xl:text-[24px] !text-[#0F0F11]' href='#about'>Industries We Serve</a>
             <h1 className='venturedebt text-[31px] sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[74px] 2xl:text-[84px] pt-[30px] md:pt-[40px] xl:pt-[48px]'>Flexible capital solutions to help <br/> businesses grow.</h1>
+            <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        >
             <div className='flex justify-between items-start gap-[50px] md:gap-[40px] lg:gap-[50px] xl:gap-[60px] 2xl:gap-[69px] mt-[40px] sm:mt-[50px] lg:mt-[70px] 2xl:mt-[110px] sm:flex-row flex-col'>
                 <div className='flex justify-start items-start h-fit gap-5 sm:gap-[30px] lg:gap-[40px] flex-1'>
                     <div className='paragaphabout text-[18px] md:text-[20px] xl:text-[24px]  !text-[#0F0F11]'>01</div>
@@ -34,6 +55,13 @@ const Page2 = () => {
                     <Image className='sm:w-[310px] md:w-[360px] lg:w-[360px] xl:w-[510px] 2xl:w-[548px]' src={image2} alt=""/>
                 </div>
             </div>
+            </motion.div>
+            <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        >
             <div className='flex justify-between items-start gap-[50px] md:gap-[40px] lg:gap-[50px] xl:gap-[60px] 2xl:gap-[69px] mt-[40px] sm:mt-[50px] lg:mt-[70px] 2xl:mt-[110px] sm:flex-row flex-col'>
                 <div className='flex justify-start items-start h-fit gap-5 sm:gap-[30px] lg:gap-[40px] flex-1'>
                     <div className='paragaphabout text-[18px] md:text-[20px] xl:text-[24px]  !text-[#0F0F11]'>02</div>
@@ -57,7 +85,13 @@ const Page2 = () => {
                 <div className='sm:block hidden '>
                     <Image className='sm:w-[310px] md:w-[360px] lg:w-[360px] xl:w-[510px] 2xl:w-[548px]' src={image3} alt=""/>
                 </div>
-            </div>
+            </div></motion.div>
+            <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        >
             <div className='flex justify-between items-start gap-[50px] md:gap-[40px] lg:gap-[50px] xl:gap-[60px] 2xl:gap-[69px] mt-[40px] sm:mt-[50px] lg:mt-[70px] 2xl:mt-[110px] sm:flex-row flex-col'>
                 <div className='flex justify-start items-start h-fit gap-5 sm:gap-[30px] lg:gap-[40px] flex-1'>
                     <div className='paragaphabout text-[18px] md:text-[20px] xl:text-[24px]  !text-[#0F0F11]'>03</div>
@@ -82,8 +116,10 @@ const Page2 = () => {
                     <Image className='sm:w-[310px] md:w-[360px] lg:w-[360px] xl:w-[510px] 2xl:w-[548px]' src={image4} alt=""/>
                 </div>
             </div>
+            </motion.div>
             </div>
-        </div>
+            </div>
+        </motion.div>
     );
 };
 

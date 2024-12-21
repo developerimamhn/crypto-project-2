@@ -1,8 +1,22 @@
+"use client";
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import React from 'react';
 import Image from 'next/image';
 
 const Page4 = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Trigger animation only once
+        threshold: 0.2, // Trigger when 20% of the component is visible
+      });
     return (
+        <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        >
         <div className='bg-[#BFE953]'>
            <div className='container mx-auto pt-[35px] sm:pt-[44px] lg:pt-[58px] xl:pt-[68px] 2xl:pt-[78px] pb-[60px] md:pb-[80px] lg:pb-[120px] xl:pb-[150px] 2xl:pb-[200px] sm:px-0 px-[24px]'>
                 <div className='flex justify-between items-center mb-[30px] sm:mb-[20px] lg:mb-[30px]'>
@@ -23,6 +37,7 @@ s access to our network, industry knowledge, or business experience, we are comm
                 </div>
            </div>
         </div>
+        </motion.div>
     );
 };
 
